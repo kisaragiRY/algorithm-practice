@@ -1,4 +1,27 @@
 #%%
+# 数组的遍历
+# 628. 三个数的最大乘积
+from typing import List
+def maxProduct(nums:List[int])->int:
+    min1,min2=float('inf'),float('inf')
+    max1,max2,max3=float('-inf'),float('-inf'),float('-inf')
+    for num in nums:
+        if num<min1:
+            min1,min2=num,min1
+        elif num <min2:
+            min2=num
+        if num>max1:
+            max1,max2,max3=num,max1,max2
+        elif num>max2:
+            max2,max3=num,max2
+        elif num>max3:
+            max3=num
+    return max(min1*min2*max3,max1*max2*max3)
+
+maxProduct([1,2,3,4])
+
+#%%
+# 数组的遍历
 # 414. 第三大的数
 from typing import List
 def thirdMax(nums:List[int])->int:
@@ -10,7 +33,7 @@ def thirdMax(nums:List[int])->int:
             b,c =num,b
         elif b>num>c:
             c=num
-    return a if c == float('inf') else c
+    return a if c == float('-inf') else c
 
 def thirdMax1(nums):
         """
