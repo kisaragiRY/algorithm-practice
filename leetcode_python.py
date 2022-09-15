@@ -1,5 +1,22 @@
 #%%
 # 数组的遍历
+#645. 错误的集合
+from  typing import List
+def findErrorNums(nums:List[int])->int:
+    nums.sort()
+    for i in range(1,len(nums)):
+        if nums[i]!=nums[i-1]:
+            k=nums[i]
+        
+
+
+findErrorNums([2,3,2])
+#%%
+l=[3,3,2]
+l.sort()
+l
+#%%
+# 数组的遍历
 # 628. 三个数的最大乘积
 from typing import List
 def maxProduct(nums:List[int])->int:
